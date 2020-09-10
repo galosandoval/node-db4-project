@@ -8,7 +8,7 @@ exports.up = function (knex) {
     .createTable("steps", (tbl) => {
       tbl.increments();
 
-      tbl.text("Description", 128).notNullable();
+      tbl.text("description", 128).notNullable();
     })
     .createTable("recipes", (tbl) => {
       tbl.increments();

@@ -9,9 +9,15 @@ exports.up = function (knex) {
       tbl.increments();
 
       tbl.text("description", 128).notNullable();
+
+      tbl.integer('recipe_id').unsigned()
+        .notNullable()
+        .references("recipe.id")
+        .onDelete("RESTRICT")
+        .onUpdate("CASCADE");
     })
     .createTable("recipes", (tbl) => {
-      tbl.increments();
+      tbl.increments('recipe_id');
 
       tbl
         // default foreign key methods

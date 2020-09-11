@@ -1,15 +1,17 @@
-
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   const steps = [
     {
-      description: 'spread peanut butter on one slice of bread'
+      description: "spread peanut butter on one slice of bread",
+      recipe_id: 1,
     },
     {
-      description: 'spread jam on the other slice'
+      description: "spread jam on the other slice",
+      recipe_id: 1,
     },
     {
-      description: 'press both slices together'
-    }
-  ]
-  return knex('steps').insert(steps)
+      description: "press both slices together",
+      recipe_id: 1,
+    },
+  ];
+  return knex("steps").insert(steps);
 };
